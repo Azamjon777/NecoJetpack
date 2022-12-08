@@ -1,7 +1,8 @@
-package com.azamjon.suminshoplist
+package com.azamjon.suminshoplist.presentation
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.azamjon.suminshoplist.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
