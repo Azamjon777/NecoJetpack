@@ -2,8 +2,8 @@ package com.azamjon.suminshoplist.domain
 
 import com.azamjon.suminshoplist.domain.model.ShopItem
 
-class GetShopItemById {
+class GetShopItemById(private val shopListRepository: ShopListRepository) {
     fun getShopItemById(shopItemId: Int): ShopItem {
-        TODO()
+        return shopListRepository.getShopItemById(shopItemId = shopItemId)
     }
 }

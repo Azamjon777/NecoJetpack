@@ -2,8 +2,8 @@ package com.azamjon.suminshoplist.domain
 
 import com.azamjon.suminshoplist.domain.model.ShopItem
 
-class AddShopItemUseCase {
+class AddShopItemUseCase(private val shopListRepository: ShopListRepository) {
     fun addShopItem(shopItem: ShopItem) {
-        TODO()
+        shopListRepository.addShopItem(shopItem = shopItem)
     }
 }
