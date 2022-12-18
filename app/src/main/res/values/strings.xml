@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">SuminShopList</string>
+    <string name="add_new_sop_item">Add new sop item</string>
+    <string name="shop_item">Покупка</string>
+    <string name="_1">1</string>
 </resources>

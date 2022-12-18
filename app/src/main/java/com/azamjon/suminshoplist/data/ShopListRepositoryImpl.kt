@@ -6,14 +6,21 @@ import com.azamjon.suminshoplist.domain.ShopListRepository
 import com.azamjon.suminshoplist.domain.model.ShopItem
 
 object ShopListRepositoryImpl : ShopListRepository {
-    private val shopList = mutableListOf<ShopItem>()
-    private var autoIncrementId = 0
-
     private val shopListLiveData = MutableLiveData<List<ShopItem>>()
+    private val shopList = sortedSetOf<ShopItem>({ o1, o2 -> o1.id.compareTo(o2.id) })
+
+//    private val shopList = sortedSetOf<ShopItem>(object : Comparator<ShopItem> {
+//        override fun compare(shopItem1: ShopItem?, shopItem2: ShopItem?): Int {
+//            return compare(shopItem1, shopItem2)
+//        }
+//    })   // но так длинне
+
+
+    private var autoIncrementId = 0
 
     init {
         for (i in 0 until 10) {
-            val item = ShopItem(name = "name:$i. ", i, true)
+            val item = ShopItem(name = "name: $i ", i, true)
             addShopItem(item)
         }
     }
