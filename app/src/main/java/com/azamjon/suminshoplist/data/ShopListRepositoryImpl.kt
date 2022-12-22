@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.azamjon.suminshoplist.domain.ShopListRepository
 import com.azamjon.suminshoplist.domain.model.ShopItem
+import kotlin.random.Random
 
 object ShopListRepositoryImpl : ShopListRepository {
     private val shopListLiveData = MutableLiveData<List<ShopItem>>()
@@ -13,14 +14,13 @@ object ShopListRepositoryImpl : ShopListRepository {
 //        override fun compare(shopItem1: ShopItem?, shopItem2: ShopItem?): Int {
 //            return compare(shopItem1, shopItem2)
 //        }
-//    })   // но так длинне
-
+//    })   // но так длиннее
 
     private var autoIncrementId = 0
 
     init {
-        for (i in 0 until 10) {
-            val item = ShopItem(name = "name: $i ", i, true)
+        for (i in 0 until 1000) {
+            val item = ShopItem(name = "name: $i ", i, Random.nextBoolean())
             addShopItem(item)
         }
     }
