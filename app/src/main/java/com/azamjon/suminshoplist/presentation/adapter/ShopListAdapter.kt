@@ -1,25 +1,27 @@
 package com.azamjon.suminshoplist.presentation.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.ListAdapter
 import com.azamjon.suminshoplist.R
 import com.azamjon.suminshoplist.domain.model.ShopItem
-import com.azamjon.suminshoplist.presentation.ShopListDiffCallback
+import com.azamjon.suminshoplist.presentation.ShopItemDiffCallback
 
-class ShopListAdapter : RecyclerView.Adapter<ShopListAdapter.ShopItemViewHolder>() {
+class ShopListAdapter :
+    ListAdapter<ShopItem, ShopItemViewHolder>(ShopItemDiffCallback()) {
+// ListAdapter для того чтобы дейтвия были в другом потоке, для оптимизации
+
+/*
     var shopList = listOf<ShopItem>()
-        set(value) {
-            val callback = ShopListDiffCallback(shopList, value)
+        set(newList) {
+            val callback = ShopListDiffCallback(shopList, newList)
             val diffResult = DiffUtil.calculateDiff(callback)
             diffResult.dispatchUpdatesTo(this)
             // это все для того чтобы не создавать заного viewHolder-ы при удалении 1-го item
             // для оптимизации
-            field = value
+            field = newList
         }
+*/
 
     var onShopItemLongClickListener: ((ShopItem) -> Unit)? = null
     var onShopItemClickListener: ((ShopItem) -> Unit)? = null
@@ -39,7 +41,7 @@ class ShopListAdapter : RecyclerView.Adapter<ShopListAdapter.ShopItemViewHolder>
     }
 
     override fun onBindViewHolder(holder: ShopItemViewHolder, position: Int) {
-        val shopItem = shopList[position]
+        val shopItem = getItem(position)
         holder.view.setOnLongClickListener {
             onShopItemLongClickListener?.invoke(shopItem)
             // у лямбда выражений можно явно вызвать метод invoke()
@@ -56,30 +58,21 @@ class ShopListAdapter : RecyclerView.Adapter<ShopListAdapter.ShopItemViewHolder>
         holder.tvCount.text = shopItem.count.toString()
     }
 
-    override fun onViewRecycled(holder: ShopItemViewHolder) {
+    /*override fun onViewRecycled(holder: ShopItemViewHolder) {
         super.onViewRecycled(holder)
         holder.tvName.text = ""
         holder.tvCount.text = ""
     }
-
-
-    override fun getItemCount(): Int {
-        return shopList.size
-    }
-
+    этот метод для того чтобы переиспользовать viewHolder, а не создавать снова
+    */
 
     override fun getItemViewType(position: Int): Int {
-        val item = shopList[position]
+        val item = getItem(position)
         return if (item.enabled) {
             VIEW_TYPE_ENABLED
         } else {
             VIEW_TYPE_DISABLED
         }
-    }
-
-    class ShopItemViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-        val tvName: TextView = view.findViewById(R.id.tv_name)
-        val tvCount: TextView = view.findViewById(R.id.tv_count)
     }
 
     companion object {
