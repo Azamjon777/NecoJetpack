@@ -9,6 +9,7 @@ import kotlin.random.Random
 object ShopListRepositoryImpl : ShopListRepository {
     private val shopListLiveData = MutableLiveData<List<ShopItem>>()
     private val shopList = sortedSetOf<ShopItem>({ o1, o2 -> o1.id.compareTo(o2.id) })
+    // сверху код для того чтобы при активации и дизактивации item-ы оставались на своей позиции...?
 
 //    private val shopList = sortedSetOf<ShopItem>(object : Comparator<ShopItem> {
 //        override fun compare(shopItem1: ShopItem?, shopItem2: ShopItem?): Int {

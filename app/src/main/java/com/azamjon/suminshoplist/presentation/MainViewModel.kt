@@ -20,7 +20,7 @@ class MainViewModel : ViewModel() {
         removeShopItemUseCase.removeShopItem(shopItem = shopItem)
     }
 
-    fun refactorShopItem(shopItem: ShopItem) {
+    fun changeEnableState(shopItem: ShopItem) {
         val newItem = shopItem.copy(enabled = !shopItem.enabled)
         refactorShopItemUseCase.refactorShopItemUseCase(newItem)
     }
