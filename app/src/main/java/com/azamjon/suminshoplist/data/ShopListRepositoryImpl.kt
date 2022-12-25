@@ -4,16 +4,24 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.azamjon.suminshoplist.domain.ShopListRepository
 import com.azamjon.suminshoplist.domain.model.ShopItem
+import kotlin.random.Random
 
 object ShopListRepositoryImpl : ShopListRepository {
-    private val shopList = mutableListOf<ShopItem>()
+    private val shopListLiveData = MutableLiveData<List<ShopItem>>()
+    private val shopList = sortedSetOf<ShopItem>({ o1, o2 -> o1.id.compareTo(o2.id) })
+    // сверху код для того чтобы при активации и дизактивации item-ы оставались на своей позиции...?
+
+//    private val shopList = sortedSetOf<ShopItem>(object : Comparator<ShopItem> {
+//        override fun compare(shopItem1: ShopItem?, shopItem2: ShopItem?): Int {
+//            return compare(shopItem1, shopItem2)
+//        }
+//    })   // но так длиннее
+
     private var autoIncrementId = 0
 
-    private val shopListLiveData = MutableLiveData<List<ShopItem>>()
-
     init {
-        for (i in 0 until 10) {
-            val item = ShopItem(name = "name:$i. ", i, true)
+        for (i in 0 until 1000) {
+            val item = ShopItem(name = "name: $i ", i, Random.nextBoolean())
             addShopItem(item)
         }
     }
