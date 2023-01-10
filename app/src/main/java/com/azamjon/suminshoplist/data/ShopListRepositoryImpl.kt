@@ -20,8 +20,8 @@ object ShopListRepositoryImpl : ShopListRepository {
     private var autoIncrementId = 0
 
     init {
-        for (i in 0 until 1000) {
-            val item = ShopItem(name = "name: $i ", i, Random.nextBoolean())
+        for (i in 0..10) {
+            val item = ShopItem("Name: $i", i, Random.nextBoolean(), i)
             addShopItem(item)
         }
     }
@@ -44,7 +44,7 @@ object ShopListRepositoryImpl : ShopListRepository {
         return shopListLiveData
     }
 
-    override fun refactorShopItemUseCase(shopItem: ShopItem) {
+    override fun editShopItemUseCase(shopItem: ShopItem) {
         val oldElement = getShopItemById(shopItem.id)
         shopList.remove(oldElement)
         addShopItem(shopItem)
