@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.azamjon.suminshoplist.data.ShopListRepositoryImpl
 import com.azamjon.suminshoplist.domain.AddShopItemUseCase
 import com.azamjon.suminshoplist.domain.GetShopItemById
-import com.azamjon.suminshoplist.domain.RefactorShopItemUseCase
+import com.azamjon.suminshoplist.domain.EditShopItemUseCase
 import com.azamjon.suminshoplist.domain.model.ShopItem
 
 class ShopItemViewModel : ViewModel() {
@@ -14,7 +14,7 @@ class ShopItemViewModel : ViewModel() {
 
     private val getShopItemUseCase = GetShopItemById(repository)
     private val addShopItemUseCase = AddShopItemUseCase(repository)
-    private val refactorShopItemUseCase = RefactorShopItemUseCase(repository)
+    private val editShopItemUseCase = EditShopItemUseCase(repository)
 
     private val _errorInputName = MutableLiveData<Boolean>()
     val errorInputName: LiveData<Boolean>
@@ -58,7 +58,7 @@ class ShopItemViewModel : ViewModel() {
         if (fieldsValid) {
             _shopItem.value?.let {
                 val item = it.copy(name = name, count = count)
-                refactorShopItemUseCase.refactorShopItemUseCase(item)
+                editShopItemUseCase.editShopItemUseCase(item)
                 finishWork()
             }
         }

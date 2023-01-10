@@ -7,6 +7,6 @@ interface ShopListRepository {
     fun addShopItem(shopItem: ShopItem)
     fun getShopItemById(shopItemId: Int): ShopItem
     fun getShopList(): LiveData<List<ShopItem>>
-    fun refactorShopItemUseCase(shopItem: ShopItem)
+    fun editShopItemUseCase(shopItem: ShopItem)
     fun removeShopItem(shopItem: ShopItem)
 }

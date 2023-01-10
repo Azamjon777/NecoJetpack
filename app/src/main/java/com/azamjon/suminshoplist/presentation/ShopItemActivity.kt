@@ -3,31 +3,21 @@ package com.azamjon.suminshoplist.presentation
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.azamjon.suminshoplist.R
 import com.azamjon.suminshoplist.domain.model.ShopItem
-import com.google.android.material.textfield.TextInputLayout
 
-class ShopItemActivity : AppCompatActivity() {
-
-    private lateinit var viewModel: ShopItemViewModel
-
-    private lateinit var tilName: TextInputLayout
-    private lateinit var tilCount: TextInputLayout
-    private lateinit var etName: EditText
-    private lateinit var etCount: EditText
-    private lateinit var buttonSave: Button
+class ShopItemActivity : AppCompatActivity(), ShopItemFragment.OnEditingFinishedListener {
 
     private var screenMode = MODE_UNKNOWN
     private var shopItemId = ShopItem.UNDEFINED_ID
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shop_item)
         parseIntent()
-        launchRightMode()
+        if (savedInstanceState == null) {//эта проверка для того чтобы не создавать повторно onCreate()
+            launchRightMode()
+        }
     }
 
     private fun parseIntent() {
@@ -47,20 +37,28 @@ class ShopItemActivity : AppCompatActivity() {
         }
     }
 
+    /*здесь мы запускаем edit или add фрагмент, передавая ShopItemFragment() через функции
+    newInstanceEditItem или newInstanceAddItem, а засовывая это в переменную fragment*/
     private fun launchRightMode() {
         val fragment: ShopItemFragment = when (screenMode) {
-            MODE_EDIT -> {         // MODE_EDIT и MODE_ADD это как бы value внутри screenMode
-                newInstanceEditItem(shopItemId)
+            MODE_EDIT -> {                 //MODE_EDIT и MODE_ADD это как бы value внутри screenMode
+                ShopItemFragment.newInstanceEditItem(shopItemId) //здесь shopItemId уже обработан через parseIntent()
             }
             MODE_ADD -> {
-                newInstanceAddItem()
+                ShopItemFragment.newInstanceAddItem()
             }
             else -> {
                 throw RuntimeException("Unknown screen mode: $screenMode")
             }
         }
+        //снизу мы передаем экземпляр класса фрагмента fragment_shop_item и его класс ShopItemFragment
         supportFragmentManager.beginTransaction()
-            .add(R.id.shop_item_container, fragment).commit()
+            .replace(R.id.activity_shop_item_container, fragment)
+            .commit()
+    }
+
+    override fun onEditingFinished() {
+        finish()
     }
 
     companion object {
@@ -69,22 +67,13 @@ class ShopItemActivity : AppCompatActivity() {
         private const val MODE_EDIT = "mode_edit"
         private const val MODE_ADD = "mode_add"
         private const val MODE_UNKNOWN = ""
-
-        fun newInstanceAddItem(): ShopItemFragment {
-            return ShopItemFragment(MODE_ADD)
-        }
-
-        fun newInstanceEditItem(shopItemId: Int): ShopItemFragment {
-            return ShopItemFragment(MODE_EDIT, shopItemId)
-        }
-
         fun newIntentAddItem(context: Context): Intent {
             val intent = Intent(context, ShopItemActivity::class.java)
             intent.putExtra(EXTRA_SCREEN_MODE, MODE_ADD)
             return intent
         }
 
-        fun newIntentRefactorItem(context: Context, shopItemId: Int): Intent {
+        fun newIntentEditItem(context: Context, shopItemId: Int): Intent {
             val intent = Intent(context, ShopItemActivity::class.java)
             intent.putExtra(EXTRA_SCREEN_MODE, MODE_EDIT)
             intent.putExtra(EXTRA_SHOP_ITEM_ID, shopItemId)
