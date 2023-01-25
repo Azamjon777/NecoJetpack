@@ -2,8 +2,12 @@ package com.azamjon.suminshoplist.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.ListAdapter
 import com.azamjon.suminshoplist.R
+import com.azamjon.suminshoplist.databinding.ItemShopDisabledBinding
+import com.azamjon.suminshoplist.databinding.ItemShopEnabledBinding
 import com.azamjon.suminshoplist.domain.model.ShopItem
 import com.azamjon.suminshoplist.presentation.ShopItemDiffCallback
 
@@ -36,13 +40,20 @@ class ShopListAdapter :
             }
             else -> throw RuntimeException("Unknown view type: $viewType")
         }
-        val view = LayoutInflater.from(parent.context).inflate(layout, parent, false)
-        return ShopItemViewHolder(view)
+        val binding =
+            DataBindingUtil.inflate<ViewDataBinding>(
+                LayoutInflater.from(parent.context),
+                layout,
+                parent,
+                false
+            )
+        return ShopItemViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ShopItemViewHolder, position: Int) {
         val shopItem = getItem(position)
-        holder.view.setOnLongClickListener {
+        val binding = holder.binding
+        binding.root.setOnLongClickListener {
             onShopItemLongClickListener?.invoke(shopItem)
             // у лямбда выражений можно явно вызвать метод invoke()
             // invoke() используется изза того что у нас переменная нулабельная и ...
@@ -50,12 +61,18 @@ class ShopListAdapter :
             true
         }
 
-        holder.view.setOnClickListener {
+        binding.root.setOnClickListener {
             onShopItemClickListener?.invoke(shopItem)
         }
+        when (binding) {
+            is ItemShopDisabledBinding -> {
+                binding.shopItem = shopItem//здесь передаем shopItem в xml файл
 
-        holder.tvName.text = shopItem.name
-        holder.tvCount.text = shopItem.count.toString()
+            }
+            is ItemShopEnabledBinding -> {
+                binding.shopItem = shopItem
+            }
+        }
     }
 
     /*override fun onViewRecycled(holder: ShopItemViewHolder) {
