@@ -7,6 +7,9 @@ data class ShopItem(
     var id: Int = UNDEFINED_ID
 ) {
     companion object {
-        const val UNDEFINED_ID = -1
+        const val UNDEFINED_ID = 0
+        /*здесь присваивание числа 0 обозначает, что room сам сгенерирует id для ShopItem, а любое
+        другое число room будет думать, что это какой то уже сушествующий id, и поэтому будет
+        редактировать этот ShopItem*/
     }
 }

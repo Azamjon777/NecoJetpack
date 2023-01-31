@@ -1,14 +1,17 @@
 package com.azamjon.suminshoplist.presentation
 
-import androidx.lifecycle.ViewModel
-import com.azamjon.suminshoplist.data.ShopListRepositoryImpl
-import com.azamjon.suminshoplist.domain.GetShopListUseCase
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+import com.azamjon.suminshoplist.data.repository.ShopListRepositoryImpl
 import com.azamjon.suminshoplist.domain.EditShopItemUseCase
+import com.azamjon.suminshoplist.domain.GetShopListUseCase
 import com.azamjon.suminshoplist.domain.RemoveShopItemUseCase
 import com.azamjon.suminshoplist.domain.model.ShopItem
 
-class MainViewModel : ViewModel() {
-    private val repository = ShopListRepositoryImpl
+/*теперь мы наследуемся от AndroidViewModel, а не ViewModel, так как нам нужен application для
+ShopListRepositoryImpl*/
+class MainViewModel(application: Application) : AndroidViewModel(application) {
+    private val repository = ShopListRepositoryImpl(application)
 
     private val getShopListUseCase = GetShopListUseCase(repository)
     private val removeShopItemUseCase = RemoveShopItemUseCase(repository)
