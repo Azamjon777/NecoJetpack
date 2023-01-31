@@ -13,12 +13,12 @@ interface ShopListDao {
     /*то что внутри скобок обозначает что если в нашу добавится новый обьект с тем же id, то
      он перезапишется, иначе будет добавлен новыйц*/
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun addShopItem(shopItemDbModel: ShopItemDbModel)
+    suspend fun addShopItem(shopItemDbModel: ShopItemDbModel)
 
     @Query("DELETE FROM shop_items WHERE id=:shopItemId")
-    fun deleteShopItem(shopItemId: Int)
+    suspend fun deleteShopItem(shopItemId: Int)
 
     //здесь LIMIT=1 чтобы по данному запросу всегда возвращался 1 элемент
     @Query("SELECT * FROM shop_items WHERE id=:shopItemId LIMIT 1")
-    fun getShopItem(shopItemId: Int): ShopItemDbModel
+    suspend fun getShopItem(shopItemId: Int): ShopItemDbModel
 }
