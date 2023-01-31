@@ -4,14 +4,12 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.azamjon.suminshoplist.data.realization.ShopListRepositoryImpl
 import com.azamjon.suminshoplist.domain.AddShopItemUseCase
 import com.azamjon.suminshoplist.domain.EditShopItemUseCase
 import com.azamjon.suminshoplist.domain.GetShopItemById
 import com.azamjon.suminshoplist.domain.model.ShopItem
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 
 /*теперь мы наследуемся от AndroidViewModel, а не ViewModel, так как нам нужен application для
@@ -22,8 +20,6 @@ class ShopItemViewModel(application: Application) : AndroidViewModel(application
     private val getShopItemUseCase = GetShopItemById(repository)
     private val addShopItemUseCase = AddShopItemUseCase(repository)
     private val editShopItemUseCase = EditShopItemUseCase(repository)
-
-    private val scope = CoroutineScope(Dispatchers.IO)
 
     private val _errorInputName = MutableLiveData<Boolean>()
     val errorInputName: LiveData<Boolean>
@@ -44,7 +40,7 @@ class ShopItemViewModel(application: Application) : AndroidViewModel(application
 
 
     fun getShopItemById(shopItemId: Int) {
-        scope.launch {
+        viewModelScope.launch {
             val item = getShopItemUseCase.getShopItemById(shopItemId)
             _shopItem.value = item
         }
@@ -56,7 +52,7 @@ class ShopItemViewModel(application: Application) : AndroidViewModel(application
         val count = parseCount(inputCount)
         val fieldsValid = validateInput(name, count)
         if (fieldsValid) {
-            scope.launch {
+            viewModelScope.launch {
                 val shopItem = ShopItem(name, count, true)
                 addShopItemUseCase.addShopItem(shopItem)
                 finishWork()
@@ -70,7 +66,7 @@ class ShopItemViewModel(application: Application) : AndroidViewModel(application
         val fieldsValid = validateInput(name, count)
         if (fieldsValid) {
             _shopItem.value?.let {
-                scope.launch {
+                viewModelScope.launch {
                     val item = it.copy(name = name, count = count)
                     editShopItemUseCase.editShopItemUseCase(item)
                     finishWork()
@@ -114,10 +110,5 @@ class ShopItemViewModel(application: Application) : AndroidViewModel(application
 
     private fun finishWork() {
         _shouldCloseScreen.value = Unit
-    }
-
-    override fun onCleared() {
-        super.onCleared()
-        scope.cancel()
     }
 }
