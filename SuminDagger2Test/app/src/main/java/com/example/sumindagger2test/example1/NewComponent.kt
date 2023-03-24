@@ -6,12 +6,6 @@ import dagger.Component
 @Component(modules = [ComputerModule::class])
 interface NewComponent {
 
-//    fun getKeyboard(): Keyboard
-//
-//    fun getMouse(): Mouse
-//
-//    fun getMonitor(): Monitor
-
-    fun inject(activity: Activity)// после забилдить нужно чтобы даггер создал реализацию
+    fun inject(activity: Activity)
 
 }

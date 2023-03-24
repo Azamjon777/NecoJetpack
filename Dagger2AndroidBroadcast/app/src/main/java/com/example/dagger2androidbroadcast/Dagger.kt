@@ -1,16 +1,14 @@
 package com.example.dagger2androidbroadcast
 
+import com.example.dagger2androidbroadcast.data.NewsRepository
+import com.example.dagger2androidbroadcast.data.NewsRepositoryImpl
+import com.example.dagger2androidbroadcast.data.NewsService
 import dagger.Binds
 import dagger.Component
 import dagger.Module
 import dagger.Provides
-import com.example.dagger2androidbroadcast.data.Analytics
-import com.example.dagger2androidbroadcast.data.NewsRepository
-import com.example.dagger2androidbroadcast.data.NewsRepositoryImpl
-import com.example.dagger2androidbroadcast.data.NewsService
 import retrofit2.Retrofit
 import retrofit2.create
-import javax.inject.Named
 import javax.inject.Qualifier
 
 @Component(modules = [AppModule::class])

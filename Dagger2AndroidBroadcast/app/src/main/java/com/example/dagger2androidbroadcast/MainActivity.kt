@@ -10,29 +10,22 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.coroutineScope
-import androidx.lifecycle.repeatOnLifecycle
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import by.kirich1409.viewbindingdelegate.viewBinding
-import dagger.Lazy
-import dagger.assisted.Assisted
-import dagger.assisted.AssistedFactory
-import dagger.assisted.AssistedInject
 import com.example.dagger2androidbroadcast.data.Analytics
 import com.example.dagger2androidbroadcast.data.News
 import com.example.dagger2androidbroadcast.data.NewsRepository
 import com.example.dagger2androidbroadcast.databinding.FragmentNewsDetailsBinding
+import dagger.assisted.Assisted
+import dagger.assisted.AssistedFactory
+import dagger.assisted.AssistedInject
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.shareIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import javax.inject.Provider
+
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -125,8 +118,8 @@ class NewsDetailsViewModelFactory @AssistedInject constructor(
 ) : ViewModelProvider.Factory {
 
     @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        require(modelClass == NewsDetailsViewModel::class)
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        require(NewsDetailsViewModel::class == modelClass)
         return NewsDetailsViewModel(newsId, newsRepository) as T
     }
 

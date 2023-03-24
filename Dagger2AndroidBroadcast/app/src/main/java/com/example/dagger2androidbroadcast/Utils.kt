@@ -3,7 +3,6 @@ package com.example.dagger2androidbroadcast
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import retrofit2.Retrofit
 import kotlin.properties.ReadOnlyProperty
 
 fun stringArgs(key: String): ReadOnlyProperty<Fragment, String> {
