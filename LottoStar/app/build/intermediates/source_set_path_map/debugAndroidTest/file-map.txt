@@ -1,0 +1,7 @@
+lottostar.play.test.app-core-1.5.0-0 C:\Users\Azamjon\.gradle\caches\transforms-3\5ef1f0c08b9360be5a868e5751fcbd37\transformed\core-1.5.0\res
+lottostar.play.test.app-annotation-experimental-1.3.0-1 C:\Users\Azamjon\.gradle\caches\transforms-3\b5e0ce7ec0e7f8c5d2a2db004e23be5e\transformed\annotation-experimental-1.3.0\res
+lottostar.play.test.app-androidTest-2 D:\Android\LottoStar\app\build\generated\res\resValues\androidTest\debug
+lottostar.play.test.app-androidTest-3 D:\Android\LottoStar\app\build\generated\res\rs\androidTest\debug
+lottostar.play.test.app-mergeDebugAndroidTestResources-4 D:\Android\LottoStar\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+lottostar.play.test.app-mergeDebugAndroidTestResources-5 D:\Android\LottoStar\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+lottostar.play.test.app-merged_res-6 D:\Android\LottoStar\app\build\intermediates\merged_res\debugAndroidTest

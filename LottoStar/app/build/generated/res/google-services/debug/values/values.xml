@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">763727782952-mk4q3k7ui4e3omprlbpmabu8rv066ofe.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">763727782952</string>
+    <string name="google_api_key" translatable="false">AIzaSyBQAU6tOsrfaOe2IOxHlsj_0y5n0Kl1xsI</string>
+    <string name="google_app_id" translatable="false">1:763727782952:android:23a1fb3955e2f640a0411d</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBQAU6tOsrfaOe2IOxHlsj_0y5n0Kl1xsI</string>
+    <string name="google_storage_bucket" translatable="false">lotazam-edcd2.appspot.com</string>
+    <string name="project_id" translatable="false">lotazam-edcd2</string>
+</resources>

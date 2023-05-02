@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "lottostar.play.app-mergeDebugResources-37:/layout/fragment_web_view.xml",
+        "source": "lottostar.play.app-main-40:/layout/fragment_web_view.xml"
+    },
+    {
+        "merged": "lottostar.play.app-mergeDebugResources-37:/layout/activity_first.xml",
+        "source": "lottostar.play.app-main-40:/layout/activity_first.xml"
+    }
+]

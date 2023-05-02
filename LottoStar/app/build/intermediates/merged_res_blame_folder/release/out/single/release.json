@@ -1,0 +1,146 @@
+[
+    {
+        "merged": "lottostar.play.app-merged_res-38:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "lottostar.play.app-main-39:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "lottostar.play.app-main-39:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/drawable_chiellini.jpg.flat",
+        "source": "lottostar.play.app-main-39:/drawable/chiellini.jpg"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/drawable_rooney.jpeg.flat",
+        "source": "lottostar.play.app-main-39:/drawable/rooney.jpeg"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "lottostar.play.app-main-39:/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "lottostar.play.app-main-39:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/drawable_xabialonso.jpg.flat",
+        "source": "lottostar.play.app-main-39:/drawable/xabialonso.jpg"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/xml_backup_rules.xml.flat",
+        "source": "lottostar.play.app-main-39:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/drawable_januzaj.jpg.flat",
+        "source": "lottostar.play.app-main-39:/drawable/januzaj.jpg"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "lottostar.play.app-main-39:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "lottostar.play.app-main-39:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/drawable_deco.jpg.flat",
+        "source": "lottostar.play.app-main-39:/drawable/deco.jpg"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/drawable_ic_launcher_background.xml.flat",
+        "source": "lottostar.play.app-main-39:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/drawable_cr7.jpg.flat",
+        "source": "lottostar.play.app-main-39:/drawable/cr7.jpg"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/layout_activity_main.xml.flat",
+        "source": "lottostar.play.app-main-39:/layout/activity_main.xml"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "lottostar.play.app-main-39:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "lottostar.play.app-pngs-33:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "lottostar.play.app-main-39:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/layout_fragment_my_dialog.xml.flat",
+        "source": "lottostar.play.app-main-39:/layout/fragment_my_dialog.xml"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/layout_activity_first.xml.flat",
+        "source": "lottostar.play.app-main-39:/layout/activity_first.xml"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "lottostar.play.app-main-39:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "lottostar.play.app-main-39:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "lottostar.play.app-main-39:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/layout_fragment_web_view.xml.flat",
+        "source": "lottostar.play.app-main-39:/layout/fragment_web_view.xml"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/drawable_nani.jpg.flat",
+        "source": "lottostar.play.app-main-39:/drawable/nani.jpg"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/drawable_mascherano.jpg.flat",
+        "source": "lottostar.play.app-main-39:/drawable/mascherano.jpg"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/drawable_ic_network_check.xml.flat",
+        "source": "lottostar.play.app-main-39:/drawable/ic_network_check.xml"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/drawable_messi.jpg.flat",
+        "source": "lottostar.play.app-main-39:/drawable/messi.jpg"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/drawable_rio.jpg.flat",
+        "source": "lottostar.play.app-main-39:/drawable/rio.jpg"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "lottostar.play.app-main-39:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "lottostar.play.app-main-39:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "lottostar.play.app-main-39:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "lottostar.play.app-main-39:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/xml_data_extraction_rules.xml.flat",
+        "source": "lottostar.play.app-main-39:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "lottostar.play.app-main-39:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "lottostar.play.app-merged_res-38:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "lottostar.play.app-main-39:/mipmap-xxhdpi/ic_launcher_round.png"
+    }
+]

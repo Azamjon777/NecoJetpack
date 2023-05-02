@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "lottostar.play.app-mergeDebugResources-36:/values-v18/values-v18.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Azamjon\\.gradle\\caches\\transforms-3\\5adcbf8911d72b742fd91097bd3bb74c\\transformed\\appcompat-1.6.1\\res\\values-v18\\values-v18.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
+                    }
+                }
+            ]
+        }
+    ]
+}
