@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">TestApp</string>
-    <string name="reference">Ссылка:</string>
-    <string name="source">Source:</string>
-    <string name="company">Company:</string>
-    <string name="company_result">Company</string>
-</resources>
